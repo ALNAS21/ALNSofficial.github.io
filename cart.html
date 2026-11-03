@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | ALNS Official Market</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="cart-page">
+    <div class="page-heading">
+      <p class="eyebrow">ALNS OFFICIAL MARKET</p>
+      <h1>Your Shopping Cart</h1>
+      <p>Review your items before proceeding to checkout.</p>
+    </div>
+
+    <div class="cart-layout">
+      <section class="cart-card">
+        <div class="cart-card-heading">
+          <h2>Cart Items</h2>
+          <a href="products.html">Continue Shopping</a>
+        </div>
+        <div id="cartItems" class="cart-items-page"></div>
+      </section>
+
+      <aside class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-line"><span>Subtotal</span><strong id="cartSubtotal">₱0</strong></div>
+        <div class="summary-line"><span>Shipping</span><strong id="shippingCost">To be confirmed</strong></div>
+        <div class="summary-line summary-total"><span>Total</span><strong id="cartTotal">₱0</strong></div>
+        <p class="summary-note">Shipping fees and final delivery details will be confirmed by the seller.</p>
+        <button class="primary-button full-width" id="goToCheckout" type="button">PROCEED TO CHECKOUT</button>
+      </aside>
+    </div>
+
+    <section class="checkout-card" id="checkout">
+      <div class="cart-card-heading">
+        <div>
+          <p class="eyebrow">ALMOST THERE</p>
+          <h2>Shipping &amp; Payment Information</h2>
+        </div>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid">
+          <label>Full Name
+            <input type="text" name="fullName" autocomplete="name" required placeholder="Enter your full name">
+          </label>
+          <label>Mobile Number
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="09XXXXXXXXX" pattern="[0-9+()\- ]{10,18}">
+          </label>
+          <label class="wide-field">Email Address (optional)
+            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
+          </label>
+          <label class="wide-field">House No. / Street / Barangay
+            <input type="text" name="address" autocomplete="street-address" required placeholder="House number, street and barangay">
+          </label>
+          <label>City / Municipality
+            <input type="text" name="city" autocomplete="address-level2" required placeholder="City or municipality">
+          </label>
+          <label>Province
+            <input type="text" name="province" autocomplete="address-level1" required placeholder="Province">
+          </label>
+          <label>Postal Code
+            <input type="text" name="postalCode" autocomplete="postal-code" required placeholder="Postal code">
+          </label>
+          <label>Shipping Method
+            <select name="shippingMethod" required>
+              <option value="">Select shipping method</option>
+              <option value="Standard Delivery">Standard Delivery</option>
+              <option value="Courier - to be arranged">Courier - to be arranged</option>
+              <option value="Store Pickup (if available)">Store Pickup (if available)</option>
+            </select>
+          </label>
+          <label class="wide-field">Payment Method
+            <select name="paymentMethod" required>
+              <option value="">Select payment method</option>
+              <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+              <option value="GCash">GCash</option>
+              <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+          </label>
+          <label class="wide-field">Order Notes (optional)
+            <textarea name="notes" rows="3" placeholder="Delivery instructions, size/color requests, etc."></textarea>
+          </label>
+        </div>
+        <p class="checkout-disclaimer">GCash and Bank Transfer instructions must be provided by ALNS before payment. No payment is collected by this demo checkout.</p>
+        <button class="primary-button full-width" type="submit">PLACE ORDER</button>
+      </form>
+      <div id="orderConfirmation" class="order-confirmation" hidden aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h3>ALNS <span>— OFFICIAL MARKET</span></h3>
+        <p>Everyday finds, made easy.</p>
+        <a class="footer-email" href="mailto:alnsofficial@gmail.com">✉ Contact us by email</a>
+      </div>
+      <div class="footer-column"><h3>Quick Links</h3><ul class="footer-links">
+        <li><a href="index.html#home">Home</a></li><li><a href="products.html">Shop</a></li>
+        <li><a href="index.html#categories">Categories</a></li><li><a href="index.html#footer">About Us</a></li>
+      </ul></div>
+      <div class="footer-column"><h3>Shipping &amp; Returns</h3><ul class="footer-links">
+        <li><a href="#checkout">Shipping Information</a></li><li><a href="#checkout">Returns &amp; Exchanges</a></li>
+      </ul></div>
+      <div class="footer-column footer-social"><h3>Follow Us</h3><div class="social-links">
+        <a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">◎</a><a href="https://www.tiktok.com/" aria-label="TikTok">♪</a>
+      </div><p class="footer-copyright">© 2026 ALNS Official Market</p></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
